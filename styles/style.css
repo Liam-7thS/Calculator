@@ -1,0 +1,103 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#eee;
+    font-family: Consolas, Menlo;
+}
+.Calculator{
+    height:80vh;
+    width:50vw;
+    background-color: #444;
+    padding:5vh;
+    border-radius: 5%;
+}
+.Display{
+    width: 100%;
+    height:30%;
+    background-color: #AFA;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Upper-display{
+    color:#464;
+    height:30%;
+    text-align: end;
+    background-color: #8a0;
+    font-size: 150%;
+}
+.Lower-display{
+    color:#444;
+    height:70%;
+    text-align: end;
+    background-color:#9b0;
+    font-size: 500%;
+}
+.Keyboard{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #777;
+}
+.Deleters{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:2%;
+    background-color: #AAA;
+    
+}
+
+#C,#CE,#Backspace{
+    width: 30%;
+    height:70%;
+}
+
+.Numbers{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    justify-content: center;
+    align-items:center;
+}
+button.Number{
+    height:20%;
+    width:30%;
+    
+}
+button.Numberino{
+    width:60%;
+    height:20%;
+}
+
+.Operators{
+    height: 75%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap:5%;
+    padding: 1%;
+}
+
+.Operator{
+    height: 20%;
+}
+
+button{
+    font-size: 150%;
+    font-Weight: bold;
+    background-color:#eee;
+    color: #444;
+}
+button:hover{
+    background-color:#444;
+    color:#eee;
+}
