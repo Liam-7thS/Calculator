@@ -2,6 +2,7 @@ const upDisplay = document.querySelector('.Upper-display');
 const loDisplay = document.querySelector('.Lower-display');
 const bttns = document.querySelectorAll('.Number');
 const c = document.querySelector('#C');
+const ce = document.querySelector('#CE');
 let a = '0';
 let b = '0';
 let num1 = 0;
@@ -23,17 +24,27 @@ window.addEventListener('click',function(e){
     }
 } );
 c.addEventListener('click',ClearAll);
+ce.addEventListener('click',ClearLower);
 
 
 function keyInputManager(val){
     if (val !== null && val !== undefined){
         if (val >= 0)
-    {
-        Read(val);
-    }
-    else{
-        console.log("you clicked an operator: " + val)
-    }
+        {
+            Read(val);
+        }
+        else if(val != "="){
+            num1 = a;
+            operator = val;
+            b = a + val;
+            upDisplay.textContent = b;
+            ClearLower();
+        }
+        else{
+            num2 = a;
+            a = Operate(num1,operator,num2);
+            loDisplay.textContent = a;
+        }
     }
     
 
@@ -54,14 +65,15 @@ function Read(val){
 function ClearAll(){
     a = '0';
     b = '0';
-    upDisplay.textContent = a;
-    loDisplay.textContent = b;
+    loDisplay.textContent = a;
+    upDisplay.textContent = b;
 }
-function ClearUpper(){
-    a = '0'
+function ClearLower(){
+    a = '0';
+    loDisplay.textContent = a;
 }
 function Add(a,b){
-    return a + b;
+    return +a + +b;
 }
 
 function Substract(a,b){
