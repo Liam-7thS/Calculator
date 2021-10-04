@@ -1,3 +1,9 @@
+const upDisplay = document.querySelector('.Upper-display');
+const loDisplay = document.querySelector('.Lower-display');
+const nums = document.querySelectorAll('.Number');
+let a = 0;
+let b = 0;
+
 function Add(a,b){
     return a + b;
 }
