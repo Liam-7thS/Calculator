@@ -6,7 +6,7 @@ body{
     font-family: Consolas, Menlo;
 }
 .Calculator{
-    height:80vh;
+    height:auto;
     width:50vw;
     background-color: #444;
     padding:5vh;
@@ -18,6 +18,8 @@ body{
     background-color: #AFA;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
 
 }
 
@@ -30,14 +32,16 @@ body{
 }
 .Lower-display{
     color:#444;
-    height:70%;
+    min-height:70%;
+    max-width: 100%;
     text-align: end;
     background-color:#9b0;
-    font-size: 500%;
+    font-size: 400%;
+    
 }
 .Keyboard{
     width: 100%;
-    height: 70%;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -60,7 +64,7 @@ body{
 }
 
 .Numbers{
-    height: 80%;
+    height: auto;
     width: 70%;
     display: flex;
     flex-wrap: wrap;
