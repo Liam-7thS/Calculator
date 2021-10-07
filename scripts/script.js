@@ -3,11 +3,13 @@ const loDisplay = document.querySelector('.Lower-display');
 const bttns = document.querySelectorAll('.Number');
 const c = document.querySelector('#C');
 const ce = document.querySelector('#CE');
+const supr = document.querySelector('#Backspace');
 let a = '0';
 let b = '0';
 let num1 = 0;
 let num2 = 0;
 let operator = '';
+let isFloat = false;
 
 window.addEventListener('keydown', function(e){
 
@@ -25,18 +27,33 @@ window.addEventListener('click',function(e){
 } );
 c.addEventListener('click',ClearAll);
 ce.addEventListener('click',ClearLower);
+supr.addEventListener('click', Supress)
 
 
+
+function Supress(){
+    if (a.length > 1){
+        a = a.slice(0,-1);
+    }
+    else{
+        a = '0';
+    }
+    loDisplay.textContent = a;
+}
 function keyInputManager(val){
     if (val !== null && val !== undefined){
-        if (val >= 0)
+        if (val >= 0 || (!isFloat && val == '.'))
         {
             Read(val);
+            if(val == '.'){
+                isFloat = true;
+            }
         }
         else if(val != "="){
             num1 = a;
             operator = val;
             b = a + val;
+            isFloat = false;
             upDisplay.textContent = b;
             ClearLower();
         }
